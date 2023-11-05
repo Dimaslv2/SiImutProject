@@ -44,7 +44,7 @@
         android:layout_marginBottom="15dp"
         android:background="@drawable/shape_button01"
         android:layout_alignParentBottom="true"
-        android:text="Login"
+        android:text="@string/register"
 
         />
 </RelativeLayout>
