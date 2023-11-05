@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "90715633980",
+    "project_id": "siimut-a7e71",
+    "storage_bucket": "siimut-a7e71.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:90715633980:android:b4876fda98701cb0030639",
+        "android_client_info": {
+          "package_name": "com.example.siimut"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBP-ZXz4rkq4hI-lI2NAPkx3yHOBkWW1HM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
