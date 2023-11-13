@@ -1,5 +1,6 @@
 package com.example.siimut
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.siimut.databinding.ActivityMainBinding
@@ -14,11 +15,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         //Button Login
-        binding.LoginnBtn.setOnClickListener {
+        binding.LoginBtn.setOnClickListener {
+
+            startActivity(Intent(this, LoginActivity::class.java))
 
         }
 
-        //Button SingIn
+        //Button SignIn
         binding.LogBtn.setOnClickListener {
 
         }
