@@ -1,6 +1,7 @@
 package com.example.siimut
 
 import android.app.ProgressDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
@@ -117,14 +118,19 @@ class RegisterActivity : AppCompatActivity() {
         hashMap["timestamp"] = timestamp
 
         //set data to db
-        val ref = FirebaseDatabase.getInstance().getReference("user")
+        val ref = FirebaseDatabase.getInstance().getReference("users")
         ref.child(uid!!)
             .setValue(hashMap)
             .addOnSuccessListener {
-
+                progressDialog.dismiss()
+                progressDialog.dismiss()
+                Toast.makeText(this, "Account Create" , Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this@RegisterActivity, DashboardUserActivity::class.java))
+                finish()
             }
             .addOnFailureListener{
-
+                progressDialog.dismiss()
+                Toast.makeText(this, "Failed creating account" , Toast.LENGTH_SHORT).show()
             }
 
 

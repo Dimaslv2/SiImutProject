@@ -13,4 +13,6 @@
     <string name="si_imut">Si Imut</string>
     <string name="register">Register</string>
     <string name="new_user_signup">No have Account? SignUp Here</string>
+    <string name="name">Name</string>
+    <string name="todo">TODO</string>
 </resources>
