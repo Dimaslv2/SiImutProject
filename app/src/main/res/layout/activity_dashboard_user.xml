@@ -23,7 +23,7 @@
             android:text="Dashboard User"
             android:textColor="@color/white"/>
 
-        te
+
     </RelativeLayout>
 
 </RelativeLayout>
