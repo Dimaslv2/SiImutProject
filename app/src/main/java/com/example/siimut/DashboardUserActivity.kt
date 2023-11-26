@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.siimut.databinding.ActivityDashboardAdminBinding
 import com.example.siimut.databinding.ActivityDashboardUserBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class DashboardUserActivity : AppCompatActivity() {
 
@@ -19,10 +20,11 @@ class DashboardUserActivity : AppCompatActivity() {
         binding = ActivityDashboardUserBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-            //init firebase auth
-        firebaseAuth = FirebaseAurh.getInstance()
+        //init firebase auth
+        firebaseAuth = FirebaseAuth.getInstance()
         checkUser()
 
+        //handle click.logout
         binding.logoutBtn.setOnClickListener{
             firebaseAuth.signOut()
             startActivity(Intent(this, MainActivity::class.java))
@@ -33,15 +35,15 @@ class DashboardUserActivity : AppCompatActivity() {
     private fun checkUser(){
         //get current user
         val firebaseUser = firebaseAuth.currentUser
-        if (firebaseUser == nul){
+        if (firebaseUser == null){
             //not logged in, user can stay in user dashboard
-            binding.subTitleTv.text = "Not Logged In"
+            binding.titleTv.text = "Not Logged In"
         }
         else{
             //logged in, get and show user info
             val email = firebaseUser.email
             //set to textview off toolbar
-            binding.subTitleTv.text = email
+            binding.titleTv.text = email
         }
     }
 }

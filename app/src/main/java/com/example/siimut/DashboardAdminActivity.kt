@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.siimut.databinding.ActivityDashboardAdminBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class DashboardAdminActivity : AppCompatActivity() {
 
@@ -28,13 +29,16 @@ class DashboardAdminActivity : AppCompatActivity() {
             checkUser()
         }
 
-        //handle
+        //handle click, start  add category page
+        binding.addCategorybtn.setOnClickListener {
+            startActivity(Intent(this, CategoryAddActivity::class.java))
+        }
     }
 
     private fun checkUser(){
         //get current user
         val firebaseUser = firebaseAuth.currentUser
-        if (firebaseUser == nul){
+        if (firebaseUser == null){
             //not logged in, goto main screen
             startActivity(Intent(this, MainActivity::class.java))
             finish()

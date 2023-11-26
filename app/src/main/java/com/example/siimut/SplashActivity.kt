@@ -4,6 +4,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 
 class SplashActivity : AppCompatActivity() {
@@ -12,6 +17,8 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
+
+        firebaseAuth = FirebaseAuth.getInstance()
 
         Handler().postDelayed(Runnable {
             checkUser()
@@ -26,10 +33,11 @@ class SplashActivity : AppCompatActivity() {
         }
         else{
             val ref = FirebaseDatabase.getInstance().getReference("Users")
+
             ref.child(firebaseUser.uid)
-                .addListenerForSingleValueEvent(object : ValueEventListener{
+                .addListenerForSingleValueEvent(object : ValueEventListener {
                     override fun onDataChange(snapshot: DataSnapshot) {
-                        progressDialog.dismiss()
+
                         val userType = snapshot.child("userType").value
                         if (userType == "user"){
                             //user
