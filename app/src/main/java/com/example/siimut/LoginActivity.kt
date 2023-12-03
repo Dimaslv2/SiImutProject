@@ -82,6 +82,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun checkUser() {
         progressDialog.setMessage("Checking User :3")
+
         val firebaseUser = firebaseAuth.currentUser!!
 
         val ref = FirebaseDatabase.getInstance().getReference("Users")

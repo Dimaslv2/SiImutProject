@@ -20,7 +20,7 @@
             android:layout_margin="10dp"
             android:background="@android:color/transparent"
             android:padding="5dp"
-            android:src="@drawable/ic_back_white"
+            android:src="@drawable/ic_back_white"/>
             
             <ImageView
                 android:id="@+id/iconTv"
@@ -38,7 +38,7 @@
             android:fontFamily="sans-serif-condensed"
             android:text="Tambahkan Kategori Baru"
             android:textColor="@color/white"
-            android:scrollbarSize="28sp"
+            android:scrollbarSize="28sp"/>
 
     </RelativeLayout>
 
@@ -79,5 +79,5 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/shape_button01"
         android:text="Submit"
-        android:textColor="@color/white"
+        android:textColor="@color/white"/>
 </RelativeLayout>
